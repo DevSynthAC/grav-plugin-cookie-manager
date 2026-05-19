@@ -1,10 +1,10 @@
 name: Cookie Manager
 version: 1.0.0
-description: A completely custom and editable cookie consent manager.
+description: customizable cookie consent manager plugin for Grav CMS.
 icon: shield
 author:
-  name: Amol Chipte & Omkar Bhoir
-homepage: https://paramatrix.com
+  name: DevSynthAC
+homepage: https://github.com/DevSynthAC/grav-plugin-cookie-manager
 keywords: grav, plugin, cookie, consent, cookie manage
 license: MIT
 
