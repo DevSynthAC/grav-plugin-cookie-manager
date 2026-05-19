@@ -1,0 +1,64 @@
+{% set plugin_config = config.plugins['cookie-manager'] %}
+
+{% if plugin_config.enabled and not cookie_has_cookie %}
+<div id="cookie-banner" style="
+    --cookie-bg: {{ plugin_config.bg_color }};
+    --cookie-text: {{ plugin_config.text_color }};
+    --cookie-link: {{ plugin_config.link_color }};
+    --cookie-btn-acc-bg: {{ plugin_config.btn_accept_bg }};
+    --cookie-btn-acc-text: {{ plugin_config.btn_accept_text }};
+    --cookie-btn-dec-border: {{ plugin_config.btn_decline_border }};
+    --cookie-btn-dec-text: {{ plugin_config.btn_decline_text }};
+    --cookie-btn-necessary-bg: {{ plugin_config.btn_necessary_bg }};
+    --cookie-btn-necessary-border: {{ plugin_config.btn_necessary_border }};
+    --cookie-btn-necessary-text: {{ plugin_config.btn_necessary_text }};
+    --cookie-content-align: {{ plugin_config.content_alignment }};
+    --cookie-button-align: {{ plugin_config.button_alignment }};
+    --cookie-button-direction: {{ plugin_config.button_direction }};
+    --cookie-banner-layout: {{ plugin_config.banner_layout }};
+    {{ plugin_config.banner_position }}: 0;
+    --cookie-banner-height: {{ plugin_config.banner_height }}px;
+    --cookie-layout-direction: {{ plugin_config.banner_layout }};
+">
+    <div class="cookie-container">
+        <div class="cookie-text">
+            <p>{{ plugin_config.main_text|e }}</p>
+            <p class="cookie-meta">
+                {{ plugin_config.meta_text|e }} 
+                <a href="{{ base_url }}{{ plugin_config.privacy_link_url }}">{{ plugin_config.privacy_link_text|e }}</a>.
+            </p>
+        </div>
+        <div class="cookie-buttons">
+
+            {% if plugin_config.enable_accept_btn %}
+                <button id="cookie-accept" class="cookie-btn accept">
+                    {{ plugin_config.btn_accept_btn_text|e }}
+                </button>
+            {% endif %}
+
+            {% if plugin_config.enable_necessary_btn %}
+                <button id="cookie-necessary" class="cookie-btn necessary">
+                    {{ plugin_config.btn_necessary_btn_text|e }}
+                </button>
+            {% endif %}
+
+            {% if plugin_config.enable_decline_btn %}
+                <button id="cookie-decline" class="cookie-btn decline">
+                    {{ plugin_config.btn_decline_btn_text|e }}
+                </button>
+            {% endif %}
+
+        </div>
+    </div>
+    <script>
+        window.cookieManagerConfig = {
+            gaEnabled: {{ plugin_config.enable_google_analytics|json_encode|raw }},
+            gaId: {{ plugin_config.google_analytics_id|json_encode|raw }},
+
+            acceptDays: {{ plugin_config.accept_cookie_days|json_encode|raw }},
+            necessaryDays: {{ plugin_config.necessary_cookie_days|json_encode|raw }},
+            rejectDays: {{ plugin_config.reject_cookie_days|json_encode|raw }}
+        };
+    </script>
+</div>
+{% endif %}

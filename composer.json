@@ -1,0 +1,9 @@
+{
+  "name": "DevSynthAC/cookie-manager",
+  "type": "grav-plugin",
+  "description": "Advanced customizable cookie consent manager plugin for Grav CMS.",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4"
+  }
+}

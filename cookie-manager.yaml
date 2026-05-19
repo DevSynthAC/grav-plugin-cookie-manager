@@ -1,0 +1,32 @@
+enabled: true
+main_text: "We use cookies to enhance your browsing experience, analyze site traffic, and improve our services. By continuing to use this website, you agree to our use of cookies."
+meta_text: "For more information, please review our"
+privacy_link_text: "Privacy Policy"
+privacy_link_url: "/privacy-policy"
+enable_accept_btn: true
+btn_accept_btn_text: "I Understand"
+enable_necessary_btn: true
+btn_necessary_btn_text: "Necessary Cookies"
+enable_decline_btn: true
+btn_decline_btn_text: "Reject All"
+bg_color: "#111111"
+text_color: "#cccccc"
+link_color: "#3498db"
+btn_accept_bg: "#e67e22"
+btn_accept_text: "#ffffff"
+btn_necessary_bg: "#444444"
+btn_necessary_border: "#888888"
+btn_necessary_text: "#ffffff"
+btn_decline_border: "#ffffff"
+btn_decline_text: "#ffffff"
+content_alignment: left
+button_alignment: center
+button_direction: column
+banner_layout: row
+banner_position: bottom
+banner_height: 120
+enable_google_analytics: false
+google_analytics_id: ""
+accept_cookie_days: 365
+necessary_cookie_days: 30
+reject_cookie_days: 1

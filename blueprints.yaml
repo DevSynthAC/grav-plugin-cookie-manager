@@ -1,0 +1,268 @@
+name: Cookie Manager
+version: 1.0.0
+description: A completely custom and editable cookie consent manager.
+icon: shield
+author:
+  name: Amol Chipte & Omkar Bhoir
+homepage: https://paramatrix.com
+keywords: grav, plugin, cookie, consent, cookie manage
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin Status
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    alignment_section:
+      type: section
+      title: Cookie Banner Alignments
+      underline: true
+
+    banner_height:
+      type: range
+      label: Cookie Popup Height
+      default: 120
+      validate:
+        min: 80
+        max: 300
+
+    banner_position:
+      type: select
+      label: Banner Position
+      default: bottom
+      options:
+        bottom: Bottom
+        top: Top
+
+    banner_layout:
+      type: select
+      label: Banner Layout
+      default: row
+      options:
+        row: Horizontal
+        column: Vertical
+
+    content_alignment:
+      type: select
+      label: Content Alignment
+      default: left
+      options:
+        left: Left
+        center: Center
+        right: Right
+
+    button_alignment:
+      type: select
+      label: Button Alignment
+      default: center
+      options:
+        flex-start: Left
+        center: Center
+        flex-end: Right
+    
+    button_direction:
+      type: select
+      label: Button Layout
+      default: column
+      options:
+        column: Vertical
+        row: Horizontal
+
+    mobile_button_layout:
+      type: select
+      label: Mobile Button Layout
+      default: column
+      options:
+        column: Vertical
+        row: Horizontal
+
+    analytics_section:
+      type: section
+      title: Google Analytics
+      underline: true
+
+    enable_google_analytics:
+      type: toggle
+      label: Enable Google Analytics
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    google_analytics_id:
+      type: text
+      label: Google Analytics Measurement ID
+      placeholder: G-XXXXXXXXXX
+
+    content_section:
+      type: section
+      title: Cookie Banner Content
+      underline: true
+
+    main_text:
+      type: textarea
+      label: Main Consent Text
+      default: 'We use cookies to enhance your browsing experience, analyze site traffic, and improve our services. By continuing to use this website, you agree to our use of cookies.'
+      rows: 3
+
+    meta_text:
+      type: text
+      label: Meta / Privacy Policy Text
+      default: 'For more information, please review our'
+
+    privacy_link_text:
+      type: text
+      label: Privacy Policy Link Text
+      default: 'Privacy Policy'
+
+    privacy_link_url:
+      type: text
+      label: Privacy Policy Page URL Route
+      default: '/privacy-policy'
+      placeholder: '/privacy-policy'
+
+    buttons_section:
+      type: section
+      title: Button Labels
+      underline: true
+
+    enable_accept_btn:
+      type: toggle
+      label: Enable Accept Button
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    btn_accept_btn_text:
+      type: text
+      label: Accept Button Text
+      default: 'I Understand'
+
+    enable_necessary_btn:
+      type: toggle
+      label: Enable Necessary Button
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+           
+    btn_necessary_btn_text:
+      type: text
+      label: Necessary Button Text
+      default: 'Necessary Cookies'
+
+    enable_decline_btn:
+      type: toggle
+      label: Enable Reject Button
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    btn_decline_btn_text:
+      type: text
+      label: Decline Button Text
+      default: 'Reject All'
+
+    colors_section:
+      type: section
+      title: Style & Theme Colors
+      underline: true
+
+    bg_color:
+      type: colorpicker
+      label: Banner Background Color
+      default: '#111111'
+
+    text_color:
+      type: colorpicker
+      label: Description Text Color
+      default: '#cccccc'
+
+    link_color:
+      type: colorpicker
+      label: Privacy Link Color
+      default: '#3498db'
+
+    btn_accept_bg:
+      type: colorpicker
+      label: Accept Button Background
+      default: '#e67e22'
+
+    btn_accept_text:
+      type: colorpicker
+      label: Accept Button Text Color
+      default: '#ffffff'
+    
+    btn_necessary_bg:
+      type: colorpicker
+      label: Necessary Button Background
+      default: '#444444'
+
+    btn_necessary_border:
+      type: colorpicker
+      label: Necessary Button Border Color
+      default: '#888888'
+
+    btn_necessary_text:
+      type: colorpicker
+      label: Necessary Button Text Color
+      default: '#ffffff'
+
+    btn_decline_border:
+      type: colorpicker
+      label: Decline Button Border Color
+      default: '#ffffff'
+
+    btn_decline_text:
+      type: colorpicker
+      label: Decline Button Text Color
+      default: '#ffffff'
+
+    cookie_duration_section:
+      type: section
+      title: Cookie Duration Settings
+      underline: true
+
+    accept_cookie_days:
+      type: number
+      label: Accept Cookie Duration (Days)
+      default: 365
+      validate:
+        min: 1
+
+    necessary_cookie_days:
+      type: number
+      label: Necessary Cookie Duration (Days)
+      default: 30
+      validate:
+        min: 1
+
+    reject_cookie_days:
+      type: number
+      label: Reject Cookie Duration (Days)
+      default: 1
+      validate:
+        min: 1
